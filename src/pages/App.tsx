@@ -16,7 +16,7 @@ export default function App() {
         </div>
       </div>{/* Fin de la sección de hero */}
 
-      <div className="flex md:flex-row flex-col max-w-9/10 m-auto py-20 mt-8 gap-4 items-center">
+      <div data-aos="zoom-in" data-aos-duration="20000" className="flex md:flex-row flex-col max-w-9/10 m-auto py-20 mt-8 gap-4 items-center">
         <h1 className="text-(--azul-marino) md:text-6xl text-4xl font-bold">Camisetas personalizadas que reflejen tu estilo</h1>
         <div>
           <p className="text-xl mb-8">En nuestra empresa, transformamos tus ideas en camisetas unicas y de alta calidad. Descubre como podemos ayudarte a descatar con estilo.</p>
@@ -45,6 +45,10 @@ export default function App() {
             <p>Nuestras camisetas son perfectas para cualquier ocasion, desde eventos hasta uso diario.</p>
           </div>
         </div>
+      </div> {/* Fin de la sección de ventajas */}
+
+      <div>
+        
       </div>
     </>
   );
