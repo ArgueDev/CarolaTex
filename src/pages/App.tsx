@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import {Zap, Palette, BadgeCheck} from "lucide-react";
+import { Zap, Palette, BadgeCheck } from "lucide-react";
 
 export default function App() {
   return (
@@ -20,15 +20,15 @@ export default function App() {
         <h1 className="text-(--azul-marino) md:text-6xl text-4xl font-bold">Camisetas personalizadas que reflejen tu estilo</h1>
         <div>
           <p className="text-xl mb-8">En nuestra empresa, transformamos tus ideas en camisetas unicas y de alta calidad. Descubre como podemos ayudarte a descatar con estilo.</p>
-          <button className="bg-(--verde-menta) text-white px-4 py-2 rounded-lg">
+          <button className="bg-(--verde-menta) text-white px-4 py-2 rounded-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-(--rosa-palo)">
             <a href="#">Saber Más</a>
           </button>
         </div>
       </div> {/* Fin de la sección de camisetas */}
 
-      <div className="max-w-9/10 m-auto mt-20">
-        <h1 className="text-(--azul-marino) text-4xl font-semibold text-center mx-auto leading-tight">Descubre las ventajas de nuestas camisetas personalizadas y de alta calidad</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8 text-center">
+      <div className="max-w-9/10 m-auto mt-20" data-aos="fade-up">
+        <h1 className="text-(--azul-marino) text-4xl xl:mx-80 font-semibold text-center mx-auto leading-tight">Descubre las ventajas de nuestas camisetas personalizadas y de alta calidad</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12 text-center">
           <div className="flex flex-col items-center">
             <Zap size={40} color="#dedb2b" />
             <h2 className="text-xl mt-4 mb-2 font-semibold">Confección rápida y eficiente para satisface todas tus necesidades de camisetas.</h2>
