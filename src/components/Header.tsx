@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,12 @@ export default function Header() {
             isOpen ? "block" : "hidden"
           }`}
         >
-          <a href="#" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Inicio</a>
-          <a href="#" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Nosotros</a>
-          <a href="#" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Servicios</a>
-          <a href="#" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Contáctenos</a>
+
+          <NavLink to="/" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Inicio</NavLink>
+          <NavLink to="/nosotros" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Nosotros</NavLink>
+          <NavLink to="/servicios" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Servicios</NavLink>
+          <NavLink to="/contactanos" className="block font-bold  py-2 px-4 md:p-0 hover:text-(--verde-menta)">Contáctanos</NavLink>
+          
         </nav>
       </div>
     </header>
