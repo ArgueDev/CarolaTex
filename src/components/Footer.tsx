@@ -1,5 +1,7 @@
 // import { FaFacebook, FaInstagram } from "react-icons/fa";
 
+import { NavLink } from "react-router";
+
 export default function Footer() {
 
     const date = new Date().getFullYear();
@@ -11,11 +13,11 @@ export default function Footer() {
                 <img src="./img/logo_nav.png" alt="logo"/>
                 <div className="flex flex-col gap-4 md:mt-0 mt-8">
                     <h2 className="font-semibold text-xl">Contáctanos</h2>
-                    <a href="" className="text-sm text-gray-500 hover:font-semibold">Sobre Nosotros</a>
-                    <a href="" className="text-sm text-gray-500 hover:font-semibold">Servicios</a>
-                    <a href="" className="text-sm text-gray-500 hover:font-semibold">Galeria</a>
-                    <a href="" className="text-sm text-gray-500 hover:font-semibold">Testimonios</a>
-                    <a href="" className="text-sm text-gray-500 hover:font-semibold">Contacto</a>
+                    <NavLink to="/nosotros" className="text-sm text-gray-500 hover:font-semibold">Sobre Nosotros</NavLink>
+                    <NavLink to="/servicios" className="text-sm text-gray-500 hover:font-semibold">Servicios</NavLink>
+                    <NavLink to="/galeria" className="text-sm text-gray-500 hover:font-semibold">Galeria</NavLink>
+                    <NavLink to="/testimonios" className="text-sm text-gray-500 hover:font-semibold">Testimonios</NavLink>
+                    <NavLink to="/contacto" className="text-sm text-gray-500 hover:font-semibold">Contacto</NavLink>
                 </div>
                 <div className="flex flex-col gap-4 md:mt-0 mt-8">
                     <h2 className="font-semibold text-xl">Síguenos</h2>

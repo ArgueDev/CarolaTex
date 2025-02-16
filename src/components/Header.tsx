@@ -8,7 +8,9 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md p-4 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <img src="/img/logo_nav.png" alt="logo" className="w-32 h-auto" />
+        <NavLink to="/">
+          <img src="/img/logo_nav.png" alt="logo" className="w-32 h-auto" />
+        </NavLink>
         
         {/* Botón de menú para móviles */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
