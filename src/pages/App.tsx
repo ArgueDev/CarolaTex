@@ -1,9 +1,11 @@
 import { Route, Routes, BrowserRouter, useLocation } from "react-router";
 
+import { AnimatePresence } from "framer-motion";
+
 import Home from "./Home";
 import Nosotros from "./Nosotros";
 import NotFound from "./NotFound";
-import { AnimatePresence } from "framer-motion";
+import Servicios from "./Servicios";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -14,6 +16,7 @@ function AnimatedRoutes() {
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/servicios" element={<Servicios />} />
       </Routes>
     </AnimatePresence>
   )

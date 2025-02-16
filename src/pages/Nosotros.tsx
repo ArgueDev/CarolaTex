@@ -13,7 +13,7 @@ export default function Nosotros() {
           <p className="mt-4 text-lg md:text-xl max-w-2xl">Ofrecemos confección de camisetas únicas, adaptadas a tus necesidades y estilo personal.</p>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col items-center gap-2 max-w-8/10 m-auto mt-30">
+      <div className="flex md:flex-row flex-col items-center gap-5 max-w-8/10 m-auto mt-30">
         <h1 className="md:text-5xl text-3xl text-(--azul-marino) font-bold">Nuestra Historia y Misión en Confección</h1>
         <p className="text-lg font-semibold max-w-[550px]">Desde nuestos inicios, nos hemos dedicado a crear camisetas que reflejen la personalidad de nuestros clientes. Nuestra misión es proporcionar a nuestros clientes productos que reflejen sus estilo y personalidad, creemos que cada camiseta cuenta una historia unica y estamos aqui para ayudarte a contarla.</p>
       </div>
