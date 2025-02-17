@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     /* Colores */
     --gris-claro: #E9ECEF;
@@ -10,4 +12,7 @@
 
     /* Fuente */
     --font-roboto: Roboto, sans-serif;
+
+    /* Shadows */
+    --shadow-3xl: 8px 8px 21px -6px rgba(0, 0, 0, 0.8);
 }

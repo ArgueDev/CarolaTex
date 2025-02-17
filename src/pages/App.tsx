@@ -6,6 +6,9 @@ import Home from "./Home";
 import Nosotros from "./Nosotros";
 import NotFound from "./NotFound";
 import Servicios from "./Servicios";
+import Contacto from "./Contacto";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -17,6 +20,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/servicios" element={<Servicios />} />
+        <Route path="/contactanos" element={<Contacto />} />
       </Routes>
     </AnimatePresence>
   )
@@ -26,7 +30,9 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
+        <Header />
         <AnimatedRoutes />
+        <Footer />
     </BrowserRouter>
   )
 }
