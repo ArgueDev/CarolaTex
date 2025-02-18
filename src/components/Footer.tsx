@@ -17,7 +17,7 @@ export default function Footer() {
                     <NavLink to="/servicios" className="text-sm text-gray-500 hover:font-semibold">Servicios</NavLink>
                     <NavLink to="/galeria" className="text-sm text-gray-500 hover:font-semibold">Galeria</NavLink>
                     <NavLink to="/testimonios" className="text-sm text-gray-500 hover:font-semibold">Testimonios</NavLink>
-                    <NavLink to="/contacto" className="text-sm text-gray-500 hover:font-semibold">Contacto</NavLink>
+                    <NavLink to="/contactanos" className="text-sm text-gray-500 hover:font-semibold">Contacto</NavLink>
                 </div>
                 <div className="flex flex-col gap-4 md:mt-0 mt-8">
                     <h2 className="font-semibold text-xl dark:text-(--blanco-roto)">Síguenos</h2>

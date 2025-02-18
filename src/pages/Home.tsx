@@ -1,5 +1,9 @@
 import { useEffect } from "react";
-import { Zap, Palette, BadgeCheck } from "lucide-react";
+
+import { Zap } from "lucide-react";
+import { Palette } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
+
 import { FaStar } from "react-icons/fa";
 import { NavLink } from "react-router";
 
@@ -19,7 +23,11 @@ export default function App() {
   return (
     <PageTransition>
       <div className="relative w-full h-screen">
-        <img src="/img/bg.jpg" alt="background" className="w-full h-full object-cover" />
+        <picture>
+          <source srcSet="/img/bg.webp" type="image/webp" />
+          <source srcSet="/img/bg.jpg" type="image/jpeg" />
+          <img src="/img/bg.jpg" alt="background" className="w-full h-full object-cover" />
+        </picture>
         <div className="absolute inset-0 flex flex-col items-center justify-center dark:bg-black/50 text-white text-center px-4">
           <div className="absolute top-1/2 left-10 right-10 transform -translate-y-1/2 bg-white/70 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md">
             <h1 className="text-4xl font-bold text-(--azul-marino)">Diseña tu Estilo</h1>
@@ -63,7 +71,7 @@ export default function App() {
         </div> {/* Fin de la sección de ventajas */}
 
         <div data-aos="zoom-out" className="max-w-8/10 m-auto md:mt-50 mt-20 flex items-center gap-10 lg:flex-row flex-col">
-          <img src="./img/saludinc.png" alt="saludinc" className="lg:h-[500px] h-auto"/>  
+          <img src="/img/saludinc.webp" alt="saludinc" loading="lazy" decoding="async" className="lg:h-[400px] h-96"/>
           <div className="flex flex-col">
             <div className="flex gap-2">
               <FaStar color="#fff300" size={ 30 } />

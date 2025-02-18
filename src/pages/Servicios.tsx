@@ -25,20 +25,20 @@ export default function Servicios() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20">
           <div data-aos="fade-up" className="flex flex-col items-center bg-white dark:bg-gray-400 py-5 rounded-2xl shadow-(--shadow-3xl)">
-            <img src="./img/bordado.png" alt="bordado" className="h-96 w-fit" />
-            <h2 className="text-(--rosa-palo) dark:text-(--azul-marino) text-4xl font-semibold mt-4">Bordados</h2>
+            <img src="./img/bordado.png" alt="bordado" className="h-48 w-full object-contain" />
+            <h2 className="text-black dark:text-(--azul-marino) text-4xl font-semibold mt-4">Bordados</h2>
           </div>
           <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center bg-white dark:bg-gray-400 py-5 rounded-2xl shadow-(--shadow-3xl)">
-            <img src="./img/sublimado.png" alt="sublimado" className="h-96 w-fit"/>
-            <h2 className="text-(--rosa-palo) dark:text-(--azul-marino) text-4xl font-semibold mt-4">Sublimados</h2>
+            <img src="./img/sublimado.png" alt="sublimado" className="h-48 w-full object-contain"/>
+            <h2 className="text-black dark:text-(--azul-marino) text-4xl font-semibold mt-4">Sublimados</h2>
           </div>
           <div data-aos="fade-up" data-aos-delay="200" className="flex flex-col items-center bg-white dark:bg-gray-400 py-5 rounded-2xl shadow-(--shadow-3xl)">
-            <img src="./img/about.png" alt="publicidad" className="h-96 w-fit"/>
-            <h2 className="text-(--rosa-palo) dark:text-(--azul-marino) text-4xl font-semibold mt-4">Publicidad</h2>
+            <img src="./img/about.png" alt="publicidad" className="h-48 w-full object-contain"/>
+            <h2 className="text-black dark:text-(--azul-marino) text-4xl font-semibold mt-4">Publicidad</h2>
           </div>
           <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center bg-white dark:bg-gray-400 py-5 rounded-2xl shadow-(--shadow-3xl)">
-            <img src="./img/politica.png" alt="politica" className="h-96 w-fit"/>
-            <h2 className="text-(--rosa-palo) dark:text-(--azul-marino) text-4xl font-semibold mt-4">Politica</h2>
+            <img src="./img/politica.png" alt="politica" className="h-48 w-full object-contain"/>
+            <h2 className="text-black dark:text-(--azul-marino) text-4xl font-semibold mt-4">Politica</h2>
           </div>
         </div>
       </main>

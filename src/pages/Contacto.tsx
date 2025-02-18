@@ -1,4 +1,7 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
+
+import emailjs from '@emailjs/browser';
+
 import PageTransition from "../transition/PageTransition";
 import Alert from "../components/Alert";
 
@@ -24,7 +27,7 @@ export default function Contacto() {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [showAlert, setShowAlert] = useState(false);
-
+  const form = useRef<HTMLFormElement | null>(null);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -39,7 +42,7 @@ export default function Contacto() {
     });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let newErrors: FormErrors = {};
 
@@ -55,9 +58,29 @@ export default function Contacto() {
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 4000);
+    if (Object.keys(newErrors).length > 0) return; // No enviar si hay errores
+
+    console.log("SERVICE_ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("TEMPLATE_ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("PUBLIC_KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    try {
+      if (!form.current) return;
+
+      const response = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+      );
+
+      if (response.status === 200) {
+        setShowAlert(true);
+        setFormData({ name: "", email: "", message: "" }); // Limpiar el formulario
+        setTimeout(() => setShowAlert(false), 4000);
+      }
+    } catch (error) {
+      console.error('Error:', error);
     }
   }
 
@@ -69,7 +92,7 @@ export default function Contacto() {
           <div className="mx-auto">
             <div className="max-w-md mx-auto px-8 py-6 bg-(--gris-claro) dark:bg-gray-400 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contáctanos</h2>
-              <form onSubmit={handleSubmit}>
+              <form ref={form} onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="block text-gray-800 mb-1" htmlFor="name">Nombre</label>
                   <input
@@ -110,7 +133,7 @@ export default function Contacto() {
                   {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
                 </div>
                 <button
-                  className="w-full bg-(--verde-menta) text-white py-2 px-4 rounded-lg hover:bg-(--rosa-palo) hover:cursor-pointer transition duration-300"
+                  className="w-full bg-(--verde-menta) text-white py-2 px-4 rounded-lg hover:bg-(--rosa-palo) hover:text-(--azul-marino) hover:cursor-pointer transition duration-300"
                   type="submit"
                 >
                   Enviar Mensaje

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu} from "lucide-react";
+import { X } from "lucide-react";
+
 import { NavLink } from "react-router";
 
 import { FaRegSun } from "react-icons/fa";
@@ -45,7 +47,7 @@ export default function Header() {
         </NavLink>
         
         {/* Botón de menú para móviles */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden" aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
