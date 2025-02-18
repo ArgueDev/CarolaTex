@@ -12,12 +12,12 @@ export default function Nosotros() {
         </div>
       </div> {/* Fin de la seccion de hero */}
 
-      <div className="flex md:flex-row flex-col items-center gap-5 max-w-8/10 m-auto mt-30">
+      <div className="flex md:flex-row flex-col items-center gap-5 max-w-8/10 m-auto mt-30 text-black">
         <h1 className="md:text-5xl text-3xl text-(--azul-marino) font-bold dark:text-(--blanco-roto)">Nuestra Historia y Misión en Confección</h1>
         <p className="text-lg font-semibold max-w-[550px] dark:text-(--blanco-roto)">Desde nuestos inicios, nos hemos dedicado a crear camisetas que reflejen la personalidad de nuestros clientes. Nuestra misión es proporcionar a nuestros clientes productos que reflejen sus estilo y personalidad, creemos que cada camiseta cuenta una historia unica y estamos aqui para ayudarte a contarla.</p>
       </div> {/* Fin de la seccion de historia */}
 
-      <main className="max-w-6/10 m-auto mt-20 dark:text-(--blanco-roto)">
+      <main className="max-w-6/10 m-auto mt-20 dark:text-(--blanco-roto) text-black">
         <div className="mt-30">
           <h1 className="text-4xl font-bold text-(--azul-marino) text-center dark:text-(--blanco-roto)">Preguntas</h1>
           <p className="text-lg text-center mt-4 text-gray-900 dark:text-gray-500">Aqui encontraras respuestas a las preguntas mas frecuentes sobre nuestros servicios de confeccion de camisetas.</p>

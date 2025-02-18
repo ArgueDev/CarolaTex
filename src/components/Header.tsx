@@ -62,7 +62,7 @@ export default function Header() {
 
         {/* Navegación */}
         <nav
-          className={`md:flex gap-4 absolute md:static bg-white dark:bg-gray-400 md:bg-transparent w-full left-0 md:w-auto md:flex-row flex-col p-4 md:p-0 top-16 shadow-md md:shadow-none transition-all duration-300 ${
+          className={`text-black md:flex gap-4 absolute md:static bg-white dark:bg-gray-400 md:bg-transparent w-full left-0 md:w-auto md:flex-row flex-col p-4 md:p-0 top-16 shadow-md md:shadow-none transition-all duration-300 ${
             isOpen ? "block" : "hidden"
           }`}
         >

@@ -38,7 +38,7 @@ export default function App() {
         </div>
       </div>{/* Fin de la sección de hero */}
       
-      <main>
+      <main className="text-black">
         <div data-aos="zoom-in" className="flex md:flex-row flex-col max-w-8/10 m-auto py-20 md:mt-40 mt-10 gap-4 items-center">
           <h1 className="text-(--azul-marino) md:text-6xl text-4xl font-bold dark:text-(--blanco-roto)">Camisetas personalizadas que reflejen tu estilo</h1>
           <div>

@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
       <>
-          <footer>
+          <footer className="text-black">
               <div className="flex md:flex-row flex-col md:items-start items-center justify-around md:mt-50 mt-20">
                 <img src="./img/logo_nav.png" alt="logo"/>
                 <div className="flex flex-col gap-4 md:mt-0 mt-8">
