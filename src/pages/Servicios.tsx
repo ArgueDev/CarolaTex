@@ -17,7 +17,7 @@ export default function Servicios() {
     <PageTransition>
       
       <main className="container mx-auto mt-30 p-10">
-        <h1 className="text-center text-6xl text-(--azul-marino) dark:text-white font-semibold max-w-[800px] m-auto">Servicios de Confección de camisetas personalizadas</h1>
+        <h1 className="text-center md:text-6xl text-4xl text-(--azul-marino) dark:text-white font-semibold max-w-[800px] m-auto">Servicios de Confección de camisetas personalizadas</h1>
         <p className="text-xl text-center max-w-[1000px] m-auto mt-5 text-gray-500">
           Ofrecemos una amplia gama de servicios de confección de camisetas.
           Desde diseños personalizados hasta produccion en masa, adaptamos

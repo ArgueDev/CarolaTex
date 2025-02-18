@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu} from "lucide-react";
 import { X } from "lucide-react";
 
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 
 import { FaRegSun } from "react-icons/fa";
 import { IoMoon } from "react-icons/io5";
@@ -14,6 +14,9 @@ export default function Header() {
     return localStorage.getItem('theme') === 'dark';
   });
 
+  const location = useLocation();
+
+  // Cambiar el tema de la pagina
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -24,6 +27,7 @@ export default function Header() {
     }
   }, [darkMode]);
 
+  // Mantener el header fijo al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -32,6 +36,11 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Cerrar el menu al cambiar de pagina en dispositivos móviles
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <header
