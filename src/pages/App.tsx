@@ -9,6 +9,7 @@ import Servicios from "./Servicios";
 import Contacto from "./Contacto";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ScrollTop from "../helpers/ScrollTop";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
+        <ScrollTop />
         <Header />
         <AnimatedRoutes />
         <Footer />

@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 
 import { NavLink, useLocation } from "react-router";
 
-import { FaRegSun } from "react-icons/fa";
+import { LuSun } from "react-icons/lu";
 import { IoMoon } from "react-icons/io5";
 
 export default function Header() {
@@ -74,7 +74,7 @@ export default function Header() {
           
           {/* Boton para cambiar el tema */}
           <button className="hover:cursor-pointer" onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? <FaRegSun size={24} /> : <IoMoon size={24} />}
+            {darkMode ? <LuSun  size={24} /> : <IoMoon size={24} />}
           </button>
         </nav>
       </div>

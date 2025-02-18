@@ -71,7 +71,7 @@ export default function App() {
         </div> {/* Fin de la sección de ventajas */}
 
         <div data-aos="zoom-out" className="max-w-8/10 m-auto md:mt-50 mt-20 flex items-center gap-10 lg:flex-row flex-col">
-          <img src="/img/saludinc.webp" alt="saludinc" loading="lazy" decoding="async" className="lg:h-[400px] h-96"/>
+          <img src="/img/saludinc.webp" alt="saludinc" loading="lazy" decoding="async" className="md:h-[400px] lg:h-[500px] h-auto"/>
           <div className="flex flex-col">
             <div className="flex gap-2">
               <FaStar color="#fff300" size={ 30 } />
