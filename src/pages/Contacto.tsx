@@ -96,7 +96,7 @@ export default function Contacto() {
                 <div className="mb-4">
                   <label className="block text-gray-800 mb-1" htmlFor="name">Nombre</label>
                   <input
-                    className="w-full px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-(--verde-menta) transition duration-300"
+                    className="placeholder-gray-500 w-full px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-(--verde-menta) transition duration-300"
                     placeholder="Ingrese su nombre"
                     id="name"
                     type="text"
@@ -109,7 +109,7 @@ export default function Contacto() {
                 <div className="mb-4">
                   <label className="block text-gray-800 mb-1" htmlFor="email">Email</label>
                   <input
-                    className="w-full px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-(--verde-menta) transition duration-300"
+                    className="placeholder-gray-500 w-full px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-(--verde-menta) transition duration-300"
                     placeholder="Ingrese su correo"
                     id="email"
                     type="email"
@@ -122,7 +122,7 @@ export default function Contacto() {
                 <div className="mb-4">
                   <label className="block text-gray-800 mb-1" htmlFor="message">Mensaje</label>
                   <textarea
-                    className="w-full px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-(--verde-menta) transition duration-300"
+                    className="placeholder-gray-500 w-full px-4 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-(--verde-menta) transition duration-300"
                     rows={4}
                     placeholder="Ingrese su mensaje"
                     id="message"
