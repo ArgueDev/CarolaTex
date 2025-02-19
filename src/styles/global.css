@@ -2,11 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-    forced-color-adjust: none;
-  }
-  
-
 @theme {
     /* Colores */
     --gris-claro: #E9ECEF;
@@ -22,8 +17,3 @@
     --shadow-3xl: 8px 8px 21px -6px rgba(0, 0, 0, 0.8);
 }
 
-@layer base {
-    html {
-      color-scheme: only light dark;
-    }
-  }
