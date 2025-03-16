@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter, useLocation } from "react-router";
 
 import { AnimatePresence } from "framer-motion";
+import { Analytics } from '@vercel/analytics/react';
 
 import Home from "./Home";
 import Nosotros from "./Nosotros";
@@ -35,6 +36,7 @@ export default function App() {
         <Header />
         <AnimatedRoutes />
         <Footer />
+        <Analytics />
     </BrowserRouter>
   )
 }
