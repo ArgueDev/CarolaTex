@@ -1,8 +1,34 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="flex items-center justify-around gap-10 p-12">
+    <div class="bg-white/70 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md">
+      <h1 class="text-4xl font-bold text-blue-950">Diseña Tu Estilo</h1>
+      <p class="text-xl mt-4">
+        Explora nuestra colección de diseños para que puedas elegir el que mejor
+        se adapte a tus necesidades, descubre la camiseta perfecta que refleja
+        tu estilo y personalidad.
+      </p>
+    </div>
+
+    <div>
+      <img src="/img/hero.png" alt="hero_section" class="" />
+    </div>
+  </section>
+
+  <section class="flex md:flex-row flex-col max-w-8/10 m-auto py-20 md:mt-40 mt-10 gap-4 items-center">
+    <h2 class="text-white md:text-6xl text-4xl font-bold">Camisetas personalizadas que reflejan tu estilo</h2>
+    <div>
+      <p class="text-xl text-white mb-8">
+        En nuestra empresa, transformamos tus ideas en camisetas unicas y de alta calidad. Descubre como podemos ayudarte a descatar con estilo.
+      </p>
+      <Button 
+        text="Saber Más" 
+        href="/nosotros"
+      />
+    </div>
+  </section>
 </Layout>

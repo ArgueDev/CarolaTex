@@ -1,0 +1,42 @@
+---
+import Button from "./Button.astro";
+
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/galeria", label: "Galería" },
+];
+---
+
+<header class="flex items-center justify-between p-10">
+  <img src="/img/Logo.png" alt="logo" class="h-12" />
+  <nav class="flex gap-6 font-semibold text-xl text-white">
+    {
+      links.map((link) => {
+        const isActive = currentPath === link.href;
+
+        return (
+          <a
+            href={link.href}
+            class={`relative inline-block group transition-colors duration-300 
+  ${isActive ? "text-white" : "hover:text-blue-200"}`}
+          >
+            {link.label}
+
+            <span
+              class={`absolute -bottom-2 left-0 right-0 mx-auto h-0.5 bg-white transition-all duration-300 
+    ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+            />
+          </a>
+        );
+      })
+    }
+  </nav>
+  <Button 
+    text="Cotiza Ahora" 
+    href="#"
+  />
+</header>
