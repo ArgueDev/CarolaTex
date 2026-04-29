@@ -1,10 +1,18 @@
 ---
+import { BadgeCheck, Zap, Palette } from "@lucide/astro";
+import { Image } from "astro:assets";
+
+import Hero from "../assets/img/hero.png";
+import camisetas from "../assets/img/camisetas.jpg";
+
 import Button from "../components/Button.astro";
+import CardBeneficios from "../components/CardBeneficios.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="flex items-center justify-around gap-10 p-12">
+  {/* Hero Section */}
+  <section class="flex flex-col md:flex-row items-center justify-around gap-10 p-12 h-screen">
     <div class="bg-white/70 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md">
       <h1 class="text-4xl font-bold text-blue-950">Diseña Tu Estilo</h1>
       <p class="text-xl mt-4">
@@ -15,19 +23,61 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div>
-      <img src="/img/hero.png" alt="hero_section" class="" />
+      <Image src={Hero} alt="hero_section" loading="eager" priority />
     </div>
   </section>
 
-  <section class="flex md:flex-row flex-col max-w-8/10 m-auto py-20 md:mt-40 mt-10 gap-4 items-center">
-    <h2 class="text-white md:text-6xl text-4xl font-bold">Camisetas personalizadas que reflejan tu estilo</h2>
-    <div>
-      <p class="text-xl text-white mb-8">
-        En nuestra empresa, transformamos tus ideas en camisetas unicas y de alta calidad. Descubre como podemos ayudarte a descatar con estilo.
-      </p>
-      <Button 
-        text="Saber Más" 
-        href="/nosotros"
+  {/* About Us Section */}
+  <section class="relative w-full py-48 mt-10 overflow-hidden">
+    <div class="absolute inset-0">
+      <Image src={camisetas} alt="Camisetas personalizadas" class="w-full h-full object-cover"/>
+    </div>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div
+      class="relative z-10 max-w-7xl mx-auto px-6 flex md:flex-row flex-col gap-24 items-center"
+    >
+      <h2 class="text-white md:text-6xl text-4xl font-bold">
+        Camisetas personalizadas que reflejan tu estilo
+      </h2>
+      <div>
+        <p class="text-2xl text-white mb-8">
+          En nuestra empresa, transformamos tus ideas en camisetas únicas y de
+          alta calidad. Descubre cómo podemos ayudarte a destacar con estilo.
+        </p>
+        <Button text="Saber Más" href="/nosotros" />
+      </div>
+    </div>
+  </section>
+
+  {/* Benefits Section */}
+  <section class="max-w-8/10 m-auto md:mt-20 my-10">
+    <h1
+      class="text-white text-4xl xl:mx-80 font-semibold text-center mx-auto leading-tight"
+    >
+      Descrubre las ventajas de nuestas camisetas personalizadas y de alta
+      calidad
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20 text-center">
+      <CardBeneficios
+        icon={Zap}
+        color="#dedb2b"
+        ,
+        title="Confección rápida y eficiente para satisface todas tus necesidades de camisetas."
+        description="Ofrecemos un servicio de confeccion de camisetas que se adapta a tus ideas."
+      />
+
+      <CardBeneficios
+        icon={Palette}
+        color="#f30505"
+        title="Personalización completa: elige colores, diseños y tallas a tu gusto."
+        description="Cada camiseta es única, diseñada para reflejar tu estlo personal."
+      />
+
+      <CardBeneficios
+        icon={BadgeCheck}
+        color="#00aeff"
+        title="Materiales de alta calidad que garantizan comodidad y durabilidad en cada prenda."
+        description="Nuestras camisetas son perfectas para cualquier ocasion, desde eventos hasta uso diario."
       />
     </div>
   </section>

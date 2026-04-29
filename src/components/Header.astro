@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
+
+import Logo from "../assets/img/Logo.png";
 
 const currentPath = Astro.url.pathname;
 
@@ -11,9 +14,16 @@ const links = [
 ];
 ---
 
-<header class="flex items-center justify-between p-10">
-  <img src="/img/Logo.png" alt="logo" class="h-12" />
-  <nav class="flex gap-6 font-semibold text-xl text-white">
+<header
+  class="flex flex-col md:flex-row items-center justify-between px-6 py-6 md:px-10"
+>
+  <!-- Logo -->
+  <Image src={Logo} alt="logo" class="h-12 w-auto" loading="eager" priority />
+
+  <!-- NAV -->
+  <nav
+    class="flex flex-wrap justify-center gap-6 font-semibold text-lg text-white mt-6 md:mt-0"
+  >
     {
       links.map((link) => {
         const isActive = currentPath === link.href;
@@ -21,22 +31,23 @@ const links = [
         return (
           <a
             href={link.href}
-            class={`relative inline-block group transition-colors duration-300 
-  ${isActive ? "text-white" : "hover:text-blue-200"}`}
+            class={`relative group transition-colors duration-300 
+            ${isActive ? "text-white" : "hover:text-blue-300"}`}
           >
             {link.label}
 
             <span
-              class={`absolute -bottom-2 left-0 right-0 mx-auto h-0.5 bg-white transition-all duration-300 
-    ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+              class={`absolute -bottom-1 left-0 h-0.5 bg-blue-400 transition-all duration-300 
+              ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
             />
           </a>
         );
       })
     }
   </nav>
-  <Button 
-    text="Cotiza Ahora" 
-    href="#"
-  />
+
+  <!-- BOTÓN -->
+  <div class="mt-6 md:mt-0">
+    <Button text="Cotiza Ahora" href="#" />
+  </div>
 </header>

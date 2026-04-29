@@ -1,21 +1,24 @@
 ---
+import { Image } from "astro:assets";
+import Logo from "../assets/img/logo_nav.png";
+
 const date = new Date().getFullYear();
 ---
-
-<footer class="text-black bg-gray-200">
-    <div class="flex md:flex-row flex-col md:items-start items-center justify-around md:mt-50 mt-20 p-8">
-        <img src="/img/logo_nav.png" alt="logo">
+<div class="w-full h-24 mt-20 bg-linear-to-b from-transparent to-gray-300 "></div>
+<footer class="text-black bg-gray-300">
+    <div class="relative flex md:flex-row flex-col md:items-start items-center justify-around  p-8">
+         <Image src={Logo} alt='logo'/>
         <div class="flex flex-col gap-4 md:mt-10 mt-8">
-            <h2 class="font-semibold text-xl">Contáctanos</h2>
-            <a href="/nosotros" class="text-sm text-gray-500 hover:font-semibold">Sobre Nosotros</a>
-            <a href="/servicios" class="text-sm text-gray-500 hover:font-semibold">Servicios</a>
-            <a href="/galeria" class="text-sm text-gray-500 hover:font-semibold">Galería</a>
+            <h2 class="font-semibold text-3xl">Contáctanos</h2>
+            <a href="/nosotros" class="text-lg text-gray-500 hover:font-semibold">Sobre Nosotros</a>
+            <a href="/servicios" class="text-lg text-gray-500 hover:font-semibold">Servicios</a>
+            <a href="/galeria" class="text-lg text-gray-500 hover:font-semibold">Galería</a>
             <a href="" class="text-sm text-gray-500 hover:font-semibold">Cotiza Ahora</a>
         </div>
         <div class="flex flex-col gap-4 md:mt-10 mt-8">
-            <h2 class="font-semibold text-xl">Siguenos</h2>
-            <a href="https://www.facebook.com/technologytetil/" target="_blank" class="text-sm text-gray-500 hover:font-semibold">Facebook</a>
-            <a href="https://www.instagram.com/carola_textiles/?hl=es" target="_blank" class="text-sm text-gray-500 hover:font-semibold">Instagram</a>
+            <h2 class="font-semibold text-3xl">Siguenos</h2>
+            <a href="https://www.facebook.com/technologytetil/" target="_blank" class="text-lg text-gray-500 hover:font-semibold">Facebook</a>
+            <a href="https://www.instagram.com/carola_textiles/?hl=es" target="_blank" class="text-lg text-gray-500 hover:font-semibold">Instagram</a>
         </div>
     </div>
     <div class="flex mt-20 justify-center font-semibold p-8">
