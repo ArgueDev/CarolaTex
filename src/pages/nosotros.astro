@@ -1,7 +1,59 @@
 ---
+import { Image } from "astro:assets";
+import LogoNosotros from '../assets/img/camisetas.jpg';
 import Layout from "../layouts/Layout.astro";
+import Pregunta from "../components/Pregunta.astro";
 ---
 
 <Layout>
-  <h1>Nosotros</h1>
+  <div class="relative w-full h-[80vh]">
+    <Image 
+      src={LogoNosotros} 
+      alt="Camisetas personalizadas"
+      class="w-full h-full object-cover"
+      loading="eager"
+      priority
+    />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0 flex items-center justify-center px-4">
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 max-w-2xl text-white text-center shadow-xl">
+        <h1 class="text-4xl md:text-5xl font-bold">
+          Camisetas Personalizadas
+        </h1>
+        <p class="mt-4 text-lg md:text-xl">
+          Ofrecemos confección de camisetas únicas, adaptadas a tus necesidades y estilo personal.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex md:flex-row flex-col items-center gap-6 max-w-9/12 m-auto mt-30 text-black">
+    <h1 class="md:text-5xl text-3xl text-white font-bold">Nuestra Historia y Misión en Confección</h1>
+    <p class="text-lg md:text-2xl md:leading-11 leading-8 font-semibold max-w-137.5 text-white">Desde nuestos inicios, nos hemos dedicado a crear camisetas que reflejen la personalidad de nuestros clientes. Nuestra misión es proporcionar a nuestros clientes productos que reflejen sus estilo y personalidad, creemos que cada camiseta cuenta una historia unica y estamos aqui para ayudarte a contarla.</p>
+  </div>
+
+  <div class="max-w-6/12 m-auto mt-24 text-white">
+    <h1 class="text-5xl font-bold text-center">Preguntas Frecuentes</h1>
+    <p class="text-2xl text-center mt-4 text-gray-300">Aqui encontraras respuestas a las preguntas mas frecuentes sobre nuestros servicios de confeccion de camisetas.</p>
+    <Pregunta 
+      pregunta="¿Qué tipos de camisetas ofrecemos?"
+      respuesta="Ofrecemos una amplia variedad de camisetas, desde modelos básicos hasta opciones personalizadas. Puedes elegir entre diferentes estilos, colores y tamaños. Nos adaptamos a tus necesidades especificas."
+    />
+    <Pregunta 
+      pregunta="¿Cuál es el tiempo de entega?"
+      respuesta="El tiempo de entrega varia segun la cantidad y el tipo de personalización. Generalmente, procesamos los pedidos en un plazo de 7 a 14 dias habiles. Siempre informamos a nuestros clientes sobre el estado de sus pedidos."
+    />
+    <Pregunta 
+      pregunta="¿Ofrecen descuentos por volumen?"
+      respuesta="Si, ofrecemos descuentos especiales para pedidos grandes. Cuanto mayor sea la cantidad, mayor será el descuento. Contáctanos para obtener una cotizacion personalizada."
+    />
+    <Pregunta 
+      pregunta="¿Puedo personalizar mi camiseta?"
+      respuesta="Absolutamente, ofrecemos opciones de personalización que incluye sublimación y bordado. Puedes enviar tu diseño. Estamos aquí para hacer realidad tu visión."
+    />
+    <Pregunta 
+      pregunta="¿Hay garantía de calidad?"
+      respuesta="Sí, garantizamos la calidad de nuestras camisetas. Si no estás sastifecho con tu pedido, contáctanos dentro de los 30 días y haremos lo posible para resolver cualquier inconveniente."
+    />
+  </div>
 </Layout>
