@@ -1,7 +1,78 @@
 ---
+import { Image } from "astro:assets";
+
+import CardServicios from "../components/CardServicios.astro";
 import Layout from "../layouts/Layout.astro";
+
+import Bordado from '../assets/img/bordado.png';
+import Sublimado from '../assets/img/sublimado.png';
+import Publicidad from '../assets/img/publicidad.png';
+import Politica from '../assets/img/politica.png';
+import Services from '../assets/img/servicios.png';
 ---
 
 <Layout>
-  <h1>Servicios</h1>
+
+  <section class="w-full px-6 py-16 md:py-24">
+    <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 md:p-10 text-white text-center shadow-xl">
+
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+        Servicios de Confección de camisetas personalizadas
+      </h1>
+
+      <p class="mt-5 text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+        Ofrecemos una amplia gama de servicios de confección de camisetas. 
+        Desde diseños personalizados hasta producción en masa, adaptamos nuestras soluciones a tus necesidades.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="w-full px-6 pb-16">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+
+      <CardServicios 
+        src={Bordado}
+        alt="Bordado"
+        title="Bordados"
+      />
+
+      <CardServicios 
+        src={Sublimado}
+        alt="Sublimados"
+        title="Sublimados"
+      />
+
+      <CardServicios 
+        src={Publicidad}
+        alt="Publicidad"
+        title="Publicidad"
+      />
+
+      <CardServicios 
+        src={Politica}
+        alt="Política"
+        title="Política"
+      />
+
+    </div>
+  </section>
+
+  <section class="flex max-w-6xl mx-auto items-center mt-20">
+    <div class="relative">
+      <Image src={Services} alt="Servicios" class='h-130 w-auto'/>
+
+      <div class="absolute bottom-0 left-0 bg-blue-500 p-4 max-w-sm rounded-xl m-6">
+        <h2 class="text-2xl text-white font-bold">Camisetas con Diseños</h2>
+        <p class="text-lg text-gray-300 font-semibold">
+          Expresa la personalidad de tu marca y llévala al siguiente nivel con nuestras camisetas personalizadas.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white ml-6">
+      <h1>Calidad y Estilo</h1>
+    </div>
+  </section>
+
 </Layout>
