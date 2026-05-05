@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import images from '../data/images.json';
+import { Image } from "astro:assets";
 ---
 
 <Layout>
@@ -14,10 +15,12 @@ import images from '../data/images.json';
     <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
       {images.map((img) => (
         <div class="overflow-hidden rounded-xl group cursor-pointer">
-          <img 
+          <Image 
             src={img.src} 
             alt="camiseta"
-            loading="lazy"
+            width={500}
+            height={500}
+            loading='eager'
             class="w-full rounded-xl transition-transform duration-300 group-hover:scale-105"
           />
         </div>

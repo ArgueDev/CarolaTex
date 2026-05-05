@@ -1,20 +1,55 @@
 ---
 import { ClientRouter } from "astro:transitions";
-
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const {
+  title = "Carola-Tex | Confección y bordados personalizados",
+  description = "Cotiza tu pedido de ropa personalizada, uniformes y bordados con Carola-Tex. Calidad garantizada y envíos a todo el país.",
+  image = "/og-image.png",
+  url = Astro.url.href,
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/logo.ico" />
+
+    <!-- Primarios -->
     <meta name="generator" content={Astro.generator} />
-    <title>Carola-Tex</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Carola-Tex" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:site_name" content="Carola-Tex" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
     <ClientRouter />
   </head>
   <body class="text-white">

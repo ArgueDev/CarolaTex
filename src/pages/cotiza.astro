@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="min-h-[80vh] flex items-center justify-center px-6">
+    <form
+      id="form"
+      class="w-full max-w-lg bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-xl flex flex-col gap-6"
+    >
+      <h2 class="text-3xl font-semibold text-white text-center">
+        Solicita tu cotización
+      </h2>
+
+      <!-- Nombre -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm text-gray-300">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          required
+          class="p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+          placeholder="Tu nombre"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm text-gray-300">Correo</label>
+        <input
+          type="email"
+          name="email"
+          required
+          class="p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+          placeholder="correo@email.com"
+        />
+      </div>
+
+      <!-- Mensaje -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm text-gray-300">Mensaje</label>
+        <textarea
+          name="message"
+          required
+          rows="4"
+          class="p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
+          placeholder="Cuéntanos qué necesitas..."></textarea>
+      </div>
+
+      <!-- Botón -->
+      <button
+        id="btn"
+        type="button"
+        class="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold p-3 rounded-lg shadow-md cursor-pointer"
+      >
+        Enviar cotización
+      </button>
+
+      <!-- Mensaje de estado -->
+      <p id="status" class="text-center text-sm hidden"></p>
+    </form>
+  </section>
+</Layout>
+
+<script>
+  import emailjs from "@emailjs/browser";
+
+  const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_API_KEY;
+  const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+
+  emailjs.init(PUBLIC_KEY);
+
+  const form   = document.getElementById("form")   as HTMLFormElement;
+  const btn    = document.getElementById("btn")    as HTMLButtonElement;
+  const status = document.getElementById("status") as HTMLParagraphElement;
+
+  btn.addEventListener("click", async () => {
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+    status.className = "text-center text-sm hidden";
+
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
+
+      status.textContent = "✅ ¡Cotización enviada con éxito!";
+      status.className = "text-center text-sm text-green-400";
+      form.reset();
+
+    } catch (error) {
+      status.textContent = "❌ Hubo un error al enviar. Intenta de nuevo.";
+      status.className = "text-center text-sm text-red-400";
+      console.error("EmailJS error:", error);
+
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Enviar cotización";
+    }
+  });
+</script>

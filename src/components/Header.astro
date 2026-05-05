@@ -14,16 +14,10 @@ const links = [
 ];
 ---
 
-<header
-  class="flex flex-col md:flex-row items-center justify-between px-6 py-6 md:px-10"
->
-  <!-- Logo -->
+<header class="flex flex-col md:flex-row items-center justify-between px-6 py-6 md:px-10">
   <Image src={Logo} alt="logo" class="h-12 w-auto" loading="eager" priority />
 
-  <!-- NAV -->
-  <nav
-    class="flex flex-wrap justify-center gap-6 font-semibold text-lg text-white mt-6 md:mt-0"
-  >
+  <nav class="flex flex-wrap justify-center gap-6 font-semibold text-lg text-white mt-6 md:mt-0"  >
     {
       links.map((link) => {
         const isActive = currentPath === link.href;
@@ -46,8 +40,7 @@ const links = [
     }
   </nav>
 
-  <!-- BOTÓN -->
   <div class="mt-6 md:mt-0">
-    <Button text="Cotiza Ahora" href="#" />
+    <Button text="Cotiza Ahora" href="/cotiza" />
   </div>
 </header>
