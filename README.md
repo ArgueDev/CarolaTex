@@ -1,46 +1,24 @@
-# Astro Starter Kit: Basics
+# 🧵 Carola-Tex
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Sitio web oficial de **Carola-Tex**, empresa ecuatoriana dedicada a la confección y bordados personalizados. El sitio permite a los clientes solicitar cotizaciones de forma rápida y directa.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🛠️ Tecnologías
 
-Inside of your Astro project, you'll see the following folders and files:
+- **[Astro](https://astro.build/)** — Framework web orientado al rendimiento y SEO
+- **[Tailwind CSS](https://tailwindcss.com/)** — Utilidades CSS para el diseño
+- **[EmailJS](https://www.emailjs.com/)** — Envío de formularios sin backend
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+---
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📬 ¿Qué hace este sitio?
 
-## 🧞 Commands
+Carola-Tex no es una tienda, es un punto de contacto. Los clientes describen lo que necesitan y reciben una cotización personalizada directamente por correo.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## ✍️ Autor
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Desarrollado por **Christian Argüello**  
+Ecuador 🇪🇨
