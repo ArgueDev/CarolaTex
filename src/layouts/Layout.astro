@@ -1,4 +1,7 @@
 ---
+import  SpeedInsights  from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
+
 import { ClientRouter } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -50,6 +53,8 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.url)} />
 
+    <SpeedInsights />
+    <Analytics />
     <ClientRouter />
   </head>
   <body class="text-white">
