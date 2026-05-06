@@ -21,4 +21,4 @@ Carola-Tex no es una tienda, es un punto de contacto. Los clientes describen lo 
 ## ✍️ Autor
 
 Desarrollado por **Christian Argüello**  
-Ecuador 🇪🇨
+Ecuador
